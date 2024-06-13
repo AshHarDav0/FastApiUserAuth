@@ -25,21 +25,33 @@ http://localhost:8000/docs
 
 ## Use pre-commit in local development
 ### Create testing virtual environment in project directory
-``` python3 -m venv testenv```
+``` commandline
+python3 -m venv testenv
+```
 
 ### Activate test environment
 #### On Linux
-``` source testenv/bin/activate```
+``` 
+source testenv/bin/activate
+```
 #### On Windows
-``` testenv\Scripts\activate```
+```commandline
+testenv\Scripts\activate
+```
 
 ### Install pre-commit
-``` pip install pre-commit```
+```commandline
+pip install pre-commit
+```
 
 ### Install pre-commit hooks
-``` pre-commit install```
+``` commandline
+pre-commit install
+```
 
 ### Export needed environment variables for pre-commit to work
-``` export CONTAINER_NAME=fastapiuserauth_app_1```
+``` commandline
+export CONTAINER_NAME=fastapiuserauth_app_1
+```
 
 ### Now after each commit, pre-commit will run and check for any issues in the code.
