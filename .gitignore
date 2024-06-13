@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+*.py,cover
+.pytest_cache/
+.pytype/
+.pyre/
+
+# Docker
+*.log
+
+# PyCharm
+.idea/
+
+# pytest
+tests/pytest.log
+
+# Logs
+logs/
+
+# Environment variables
+#.env
+
+# Database
+*.db
+*.sqlite3
+*.sqlite3-journal
+
+# Other
+.DS_Store
