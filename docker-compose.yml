@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/FastAPIUserAuth
+    ports:
+      - 8000:8000
+    depends_on:
+      - fastapi_test_db
+      - fastapi_db
+    env_file:
+      - ./app/.env
+
+  fastapi_db:
+    container_name: fastapi_db
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=ashhardav
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  fastapi_test_db:
+    container_name: fastapi_test_db
+    image: postgres:13
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=ashhardav
+      - POSTGRES_DB=test_postgres
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  postgres_test_data:
